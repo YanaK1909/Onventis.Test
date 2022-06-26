@@ -23,15 +23,22 @@ namespace Onventist.Test.Webhook.Compose.Services
             _eventBus = eventBus;
         }
 
-        public async Task InvoiceApprovedNotifySubscribers(InvoiceApprovedEvent invoiceApprovedEvent)
+        public Task InvoiceApprovedNotifySubscribers(InvoiceApprovedEvent invoiceApprovedEvent)
         {
-            var subscribersList = await _subscriptionRepository.ListAsync(x => x.EventName == nameof(InvoiceApprovedEvent));
+            var body = new { InvoiceId = invoiceApprovedEvent.InvoiceId };
 
-            foreach(var subscriber in subscribersList)
+            return NotifySubscribers(nameof(InvoiceApprovedEvent), body);
+        }
+
+        private async Task NotifySubscribers(string eventName, object body = null)
+        {
+            var subscribersList = await _subscriptionRepository.ListAsync(x => x.EventName == eventName);
+
+            foreach (var subscriber in subscribersList)
             {
-                var notifyEvent = new InvoiceApprovedNotifySubscriberEvent
+                var notifyEvent = new NotifyWebhookSubscriberEvent
                 {
-                    InvoiceId = invoiceApprovedEvent.InvoiceId,
+                    Body = body,
                     SubscriptionUrl = subscriber.SubscriptionUrl
                 };
 
