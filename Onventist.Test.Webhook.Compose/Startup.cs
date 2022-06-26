@@ -1,3 +1,4 @@
+using EventBus.Base.Standard.Configuration;
 using EventBus.RabbitMQ.Standard.Configuration;
 using EventBus.RabbitMQ.Standard.Options;
 using Microsoft.AspNetCore.Builder;
@@ -6,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Onventis.Test.API
+namespace Onventist.Test.Webhook.Compose
 {
     public class Startup
     {
@@ -24,6 +25,7 @@ namespace Onventis.Test.API
 
             services.AddRabbitMqConnection(rabbitMqOptions);
             services.AddRabbitMqRegistration(rabbitMqOptions);
+            services.AddEventBusHandling(EventBusExtensions.GetHandlers(services));
 
             services.AddHealthChecks();
 
@@ -43,6 +45,8 @@ namespace Onventis.Test.API
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.SubscribeToEvents();
 
             app.UseEndpoints(endpoints =>
             {

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onventis.Test.API", "Onventis.Test.API\Onventis.Test.API.csproj", "{0A7FCE8C-9D56-4D82-BE5C-B5B4B6A79621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.API", "Onventis.Test.API\Onventis.Test.API.csproj", "{0A7FCE8C-9D56-4D82-BE5C-B5B4B6A79621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onventist.Test.Webhook.Compose", "Onventist.Test.Webhook.Compose\Onventist.Test.Webhook.Compose.csproj", "{690CBF8F-81D0-4D9B-AC5F-09B9765D48E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.Shared", "Onventis.Test.Shared\Onventis.Test.Shared.csproj", "{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onventist.Test.Webhook.Compose", "Onventist.Test.Webhook.Compose\Onventist.Test.Webhook.Compose.csproj", "{E59812FD-2239-4E52-AAFD-1D89601A7184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{0A7FCE8C-9D56-4D82-BE5C-B5B4B6A79621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A7FCE8C-9D56-4D82-BE5C-B5B4B6A79621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A7FCE8C-9D56-4D82-BE5C-B5B4B6A79621}.Release|Any CPU.Build.0 = Release|Any CPU
-		{690CBF8F-81D0-4D9B-AC5F-09B9765D48E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{690CBF8F-81D0-4D9B-AC5F-09B9765D48E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{690CBF8F-81D0-4D9B-AC5F-09B9765D48E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{690CBF8F-81D0-4D9B-AC5F-09B9765D48E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59812FD-2239-4E52-AAFD-1D89601A7184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59812FD-2239-4E52-AAFD-1D89601A7184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59812FD-2239-4E52-AAFD-1D89601A7184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59812FD-2239-4E52-AAFD-1D89601A7184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
