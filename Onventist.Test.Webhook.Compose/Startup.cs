@@ -3,9 +3,14 @@ using EventBus.RabbitMQ.Standard.Configuration;
 using EventBus.RabbitMQ.Standard.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Onventis.Test.Webhook.Data;
+using Onventis.Test.Webhook.Data.Entities;
+using Onventis.Test.Webhook.Data.Repositories;
+using Onventist.Test.Webhook.Compose.Services;
 
 namespace Onventist.Test.Webhook.Compose
 {
@@ -21,13 +26,19 @@ namespace Onventist.Test.Webhook.Compose
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHealthChecks();
+
+            string connectionString = Configuration.GetConnectionString("Onventis.Test.Webhook");
+            services.AddDbContext<WebhookDbContext>(options => options.UseSqlite(connectionString));
+
+            services.AddScoped<IRepository<Subscription>, EfRepository<Subscription>>();
+            services.AddScoped<IWebhookService, WebhookService>();
+
             var rabbitMqOptions = Configuration.GetSection("RabbitMq").Get<RabbitMqOptions>();
 
             services.AddRabbitMqConnection(rabbitMqOptions);
             services.AddRabbitMqRegistration(rabbitMqOptions);
             services.AddEventBusHandling(EventBusExtensions.GetHandlers(services));
-
-            services.AddHealthChecks();
 
             services.AddControllers();
         }

@@ -8,12 +8,18 @@
 
   <ItemGroup>
     <PackageReference Include="EventBus.RabbitMQ.Standard" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.26" />
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="6.0.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Onventis.Test.Shared\Onventis.Test.Shared.csproj" />
+    <ProjectReference Include="..\Onventis.Test.Webhook.Data\Onventis.Test.Webhook.Data.csproj" />
   </ItemGroup>
 
 
