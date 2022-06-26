@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.API", "Onvent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.Shared", "Onventis.Test.Shared\Onventis.Test.Shared.csproj", "{455F0A4B-73E5-40BC-8E15-E7F6D1199B52}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.Webhook.Compose", "Onventist.Test.Webhook.Compose\Onventis.Test.Webhook.Compose.csproj", "{E59812FD-2239-4E52-AAFD-1D89601A7184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Onventis.Test.Webhook.Compose", "Onventis.Test.Webhook.Compose\Onventis.Test.Webhook.Compose.csproj", "{E59812FD-2239-4E52-AAFD-1D89601A7184}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Onventis.Test.Webhook.Data", "Onventis.Test.Webhook.Data\Onventis.Test.Webhook.Data.csproj", "{8A5C89C9-E83E-41D3-B32D-A0B9A067CFC8}"
 EndProject

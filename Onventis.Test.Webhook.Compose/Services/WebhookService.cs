@@ -39,7 +39,8 @@ namespace Onventist.Test.Webhook.Compose.Services
                 var notifyEvent = new NotifyWebhookSubscriberEvent
                 {
                     Body = body,
-                    SubscriptionUrl = subscriber.SubscriptionUrl
+                    SubscriptionUrl = subscriber.SubscriptionUrl,
+                    HttpMethod = subscriber.HttpMethod
                 };
 
                 _eventBus.Publish(notifyEvent);

@@ -8,8 +8,8 @@ using Onventis.Test.Webhook.Data;
 namespace Onventis.Test.Webhook.Data.Migrations
 {
     [DbContext(typeof(WebhookDbContext))]
-    [Migration("20220626150107_AddTestWebhooks")]
-    partial class AddTestWebhooks
+    [Migration("20220626164557_UpdateSubscriptionsTableAddMethodColumn")]
+    partial class UpdateSubscriptionsTableAddMethodColumn
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,6 +24,9 @@ namespace Onventis.Test.Webhook.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("EventName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("HttpMethod")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("SubscriptionUrl")

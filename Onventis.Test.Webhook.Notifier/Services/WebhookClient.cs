@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Onventis.Test.Shared.Events;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Onventis.Test.Webhook.Notifier.Services
@@ -17,10 +17,10 @@ namespace Onventis.Test.Webhook.Notifier.Services
         public Task NotifySubscriber(NotifyWebhookSubscriberEvent notifyEvent)
         {
             // TODO: create Http Client with URl and specified HTTP method. Add body if exists
-            _logger.LogInformation($"Call the following webhook method:/n" +
-                $"URL: {notifyEvent.SubscriptionUrl}" +
-                $"METHOD: {notifyEvent.HttpMethod}" +
-                $"BODY: {JsonSerializer.Serialize(notifyEvent.Body)}");
+            _logger.LogInformation($"Call the following webhook method:\r\n" +
+                $"URL: {notifyEvent.SubscriptionUrl}\r\n" +
+                $"METHOD: {notifyEvent.HttpMethod}\r\n" +
+                $"BODY: {JsonConvert.SerializeObject(notifyEvent.Body)}");
 
             return Task.CompletedTask;
         }

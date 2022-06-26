@@ -54,6 +54,7 @@ namespace Onventis.Test.Webhook.Notifier
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("health");
             });
         }
     }
